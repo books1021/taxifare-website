@@ -46,3 +46,41 @@ if url == 'https://taxifare.lewagon.ai/predict':
 
 ## Finally, we can display the prediction to the user
 '''
+
+import datetime
+
+d = st.date_input(
+    "date?",
+    datetime.date(2019, 7, 6))
+st.write('date is:', d)
+
+import datetime
+
+t = st.time_input('time', datetime.time(8, 45))
+
+st.write('time', t)
+
+number2 = st.number_input('Insert pickup longitude')
+
+st.write('The pickup longitude is ', number2)
+
+number3 = st.number_input('Insert pickup latitude')
+
+st.write('The pickup latitude is ', number3)
+
+number4 = st.number_input('Insert dropoff longitude')
+
+st.write('The dropoff longitude is ', number4)
+
+number5 = st.number_input('Insert dropoff latitude')
+
+st.write('The dropoff latitude is ', number5)
+
+number6 = st.number_input('Insert passenger count')
+
+st.write('The passenger count is ', number6)
+
+import requests
+data = requests.get("'https://taxifare.lewagon.ai/predict'").json()
+
+st.write(data)
